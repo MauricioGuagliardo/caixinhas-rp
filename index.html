@@ -1,0 +1,1388 @@
+<title>Caixinhas RP Promo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,500&family=Outfit:wght@300;400;500;600;700&display=swap">
+<style>
+/*
+  Layout: Full-bleed alternating sections, kraft warmth
+  Cormorant Garamond (editorial display serif) + Outfit (clean modern sans)
+  Espresso brown darks, warm kraft ivory lights, amber gold accent
+*/
+:root {
+  --bg:         #FAF8F4;
+  --bg-alt:     #F2EDE3;
+  --fg:         #1C1108;
+  --fg-muted:   #6B5440;
+  --accent:     #B8722A;
+  --accent-lt:  #D4904E;
+  --dark:       #1C1108;
+  --dark-2:     #261808;
+  --dark-fg:    #FAF8F4;
+  --kraft:      #C9A87A;
+  --kraft-lt:   #E8D9BF;
+  --border:     #DDD0BC;
+
+  --ff-disp: 'Cormorant Garamond', Georgia, serif;
+  --ff-body: 'Outfit', system-ui, sans-serif;
+
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:       #1C1108;
+    --bg-alt:   #261808;
+    --fg:       #FAF8F4;
+    --fg-muted: #C9A87A;
+    --border:   #3D2510;
+    --kraft-lt: #3D2510;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:       #1C1108;
+  --bg-alt:   #261808;
+  --fg:       #FAF8F4;
+  --fg-muted: #C9A87A;
+  --border:   #3D2510;
+  --kraft-lt: #3D2510;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--ff-body);
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ─── LAYOUT HELPERS ─────────────────────────── */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left:  max(20px, env(safe-area-inset-left,  0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.sec {
+  padding-block: 90px;
+}
+.sec--dark  { background: var(--dark);   color: var(--dark-fg); }
+.sec--dark2 { background: var(--dark-2); color: var(--dark-fg); }
+.sec--alt   { background: var(--bg-alt); }
+
+/* ─── NAV ─────────────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 110;
+  background: var(--bg);
+}
+nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 15px;
+  padding-left:  max(20px, env(safe-area-inset-left,  0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+.nav-logo {
+  font-family: var(--ff-disp);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--fg);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-logo span { color: var(--accent); }
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+.btn-wa:hover { background: var(--accent-lt); transform: translateY(-1px); }
+.btn-wa--lg {
+  font-size: 1rem;
+  padding: 14px 32px;
+}
+.btn-wa--ghost {
+  background: transparent;
+  border: 2px solid rgba(250,248,244,0.3);
+  color: var(--dark-fg);
+}
+.btn-wa--ghost:hover { background: rgba(250,248,244,0.07); }
+
+/* ─── HERO ───────────────────────────────────── */
+.hero {
+  background: var(--dark);
+  color: var(--dark-fg);
+  padding-block: 110px 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 75% 40%, rgba(184,114,42,0.14), transparent 60%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; }
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(184,114,42,0.15);
+  border: 1px solid rgba(184,114,42,0.35);
+  color: var(--kraft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+}
+.hero-h1 {
+  font-family: var(--ff-disp);
+  font-size: clamp(3rem, 8.5vw, 6.5rem);
+  font-weight: 600;
+  line-height: 1.0;
+  letter-spacing: -0.015em;
+  color: var(--dark-fg);
+  margin: 0 0 1.5rem;
+  text-wrap: balance;
+  max-width: 850px;
+}
+.hero-h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-lt);
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(250,248,244,0.6);
+  max-width: 52ch;
+  margin: 0 0 2.5rem;
+  line-height: 1.65;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.hero-link {
+  color: rgba(250,248,244,0.5);
+  font-size: 0.88rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.hero-link:hover { color: rgba(250,248,244,0.8); }
+.hero-clients {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(250,248,244,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+.hero-clients-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250,248,244,0.35);
+  flex-shrink: 0;
+}
+.hero-client-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(250,248,244,0.45);
+  letter-spacing: 0.03em;
+}
+
+/* ─── SECTION TYPOGRAPHY ─────────────────────── */
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.sec--dark .eyebrow { color: var(--kraft); }
+h2.sh {
+  font-family: var(--ff-disp);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+h2.sh em { font-style: italic; font-weight: 400; color: var(--accent); }
+.sec--dark h2.sh em { color: var(--accent-lt); }
+.lead {
+  font-size: 1.05rem;
+  color: var(--fg-muted);
+  max-width: 56ch;
+  margin: 0.75rem 0 0;
+  line-height: 1.7;
+}
+.sec--dark .lead { color: var(--kraft); }
+
+/* ─── PROBLEM ────────────────────────────────── */
+.problem-quote {
+  font-family: var(--ff-disp);
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 auto;
+  max-width: 820px;
+  text-align: center;
+  color: var(--fg);
+}
+.problem-quote strong {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--accent);
+}
+.problem-sub {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  max-width: 55ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── BENEFITS ───────────────────────────────── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+}
+.benefit {
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--border);
+  margin: -1px;
+}
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+.benefit h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--fg);
+}
+.benefit p {
+  font-size: 0.88rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── AUDIENCES ──────────────────────────────── */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.aud-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.aud-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(28,17,8,0.1);
+  border-color: var(--accent);
+}
+.aud-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.aud-card h3 {
+  font-family: var(--ff-disp);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--fg);
+}
+.aud-pain {
+  font-size: 0.88rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+.aud-quote {
+  font-family: var(--ff-disp);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--fg);
+  margin: 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+.aud-cta {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+}
+
+/* ─── STEPS ──────────────────────────────────── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+.step {
+  padding: 2rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.step-n {
+  font-family: var(--ff-disp);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.step h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--fg);
+}
+.step p {
+  font-size: 0.87rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── CATALOG ────────────────────────────────── */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.kit-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+.kit-art {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: block;
+}
+.kit-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.kit-name {
+  font-family: var(--ff-disp);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--fg);
+}
+.kit-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.kit-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: var(--bg-alt);
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+.kit-min {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  margin: 0;
+  margin-top: auto;
+}
+
+/* ─── DIFFERENTIATOR (dark) ──────────────────── */
+.diff-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.diff-art { max-width: 420px; width: 100%; }
+.diff-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+.diff-feat {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.diff-feat-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--kraft);
+  margin-top: 2px;
+}
+.diff-feat h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+  color: var(--dark-fg);
+}
+.diff-feat p {
+  font-size: 0.87rem;
+  color: var(--kraft);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── SUSTAINABILITY ──────────────────────────── */
+.sustain-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+.sustain-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sustain-stat {
+  padding: 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.sustain-num {
+  font-family: var(--ff-disp);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+}
+.sustain-lbl {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  margin-top: 0.25rem;
+}
+.sustain-text p {
+  color: var(--fg-muted);
+  line-height: 1.75;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+.sustain-text p:last-child { margin: 0; }
+
+/* ─── MDF ─────────────────────────────────────── */
+.mdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.mdf-item {
+  padding: 1.5rem;
+  border-top: 2px solid var(--accent);
+}
+.mdf-item h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--fg);
+}
+.mdf-item p {
+  font-size: 0.87rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── CLIENTS ─────────────────────────────────── */
+.clients-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2.5rem 0 3rem;
+}
+.client-pill {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  padding: 7px 18px;
+  border-radius: 50px;
+}
+.testimonial {
+  font-family: var(--ff-disp);
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--fg);
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  max-width: 700px;
+  margin: 0;
+}
+.testimonial-attr {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  margin: 0.75rem 0 0 calc(1.5rem + 3px);
+}
+
+/* ─── FAQ ─────────────────────────────────────── */
+.faq-list {
+  margin-top: 2.5rem;
+}
+details.faq {
+  border-bottom: 1px solid var(--border);
+}
+details.faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--fg);
+  gap: 1rem;
+  list-style: none;
+  user-select: none;
+}
+details.faq summary::-webkit-details-marker { display: none; }
+.faq-chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  transition: transform 0.25s;
+}
+details[open] .faq-chevron { transform: rotate(180deg); }
+.faq-body {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  padding-bottom: 1.25rem;
+  max-width: 68ch;
+}
+
+/* ─── FINAL CTA ───────────────────────────────── */
+.final-cta {
+  background: var(--dark);
+  color: var(--dark-fg);
+  text-align: center;
+  padding-block: 110px;
+}
+.final-cta-h {
+  font-family: var(--ff-disp);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0 0 1.5rem;
+  text-wrap: balance;
+  color: var(--dark-fg);
+}
+.final-cta-h em { font-style: italic; font-weight: 400; color: var(--accent-lt); }
+.final-cta .lead { color: var(--kraft); margin: 0 auto 2.5rem; text-align: center; }
+.final-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.final-contact {
+  margin-top: 3rem;
+  font-size: 0.82rem;
+  color: rgba(250,248,244,0.35);
+  line-height: 1.8;
+}
+.final-contact a {
+  color: rgba(250,248,244,0.5);
+  text-decoration: none;
+}
+.final-contact a:hover { color: rgba(250,248,244,0.75); }
+
+/* ─── FOOTER ──────────────────────────────────── */
+footer {
+  background: var(--dark-2);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-block: 2.5rem;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding-left:  max(20px, env(safe-area-inset-left,  0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.footer-logo {
+  font-family: var(--ff-disp);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(250,248,244,0.55);
+}
+.footer-logo span { color: var(--accent); }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-links a {
+  color: rgba(250,248,244,0.35);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: rgba(250,248,244,0.65); }
+.footer-cnpj {
+  font-size: 0.78rem;
+  color: rgba(250,248,244,0.25);
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+/* ─── FLOATING WA ─────────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  right:  calc(24px + env(safe-area-inset-right,  0px));
+  z-index: 90;
+  background: #25D366;
+  color: #fff;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37,211,102,0.55);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 720px) {
+  .sec { padding-block: 64px; }
+  .diff-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .diff-art { max-width: 300px; margin: 0 auto; }
+  .sustain-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .sustain-visual { flex-direction: row; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero { padding-block: 80px 70px; }
+  .final-cta { padding-block: 80px; }
+}
+@media (max-width: 480px) {
+  .sustain-visual { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+</style>
+
+<!-- ░░░ FLOATING WHATSAPP ░░░ -->
+<a class="wa-float"
+   href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+montar+um+kit+personalizado."
+   target="_blank" rel="noopener" aria-label="Contato via WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ░░░ NAV ░░░ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Caixinhas <span>RP Promo</span></a>
+    <a class="btn-wa"
+       href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+montar+um+kit+personalizado."
+       target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Montar meu kit
+    </a>
+  </div>
+</nav>
+
+<!-- ░░░ HERO ░░░ -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-badge">Kits personalizados · Kraft cortado a laser</div>
+    <h1 class="hero-h1">
+      Brinde solto<br>vai pra gaveta.<br>
+      <em>Kit montado<br>vira história.</em>
+    </h1>
+    <p class="hero-sub">
+      A experiência de um kit premium — no prazo e no orçamento da sua empresa.
+      Você escolhe os itens; a caixa se adapta. Chega pronto, com a sua marca.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-wa btn-wa--lg"
+         href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+montar+um+kit+personalizado+para+minha+empresa."
+         target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Montar meu kit no WhatsApp
+      </a>
+      <a href="#kits" class="hero-link">
+        Ver os kits
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+    <div class="hero-clients">
+      <span class="hero-clients-label">Já confiaram</span>
+      <span class="hero-client-name">Feevale</span>
+      <span class="hero-client-name">InterCement</span>
+      <span class="hero-client-name">Suvinil</span>
+      <span class="hero-client-name">Coral</span>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ PROBLEM ░░░ -->
+<section class="sec sec--alt">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Por que kit?</p>
+    <blockquote class="problem-quote">
+      "Receber um kit montado é diferente de ganhar um brinde.<br>
+      É sentir que alguém <strong>pensou em você.</strong>"
+    </blockquote>
+    <p class="problem-sub">
+      O novo colaborador se sente parte do time. O cliente percebe cuidado.
+      O participante leva para casa e mostra. É por isso que um kit bem montado
+      aparece nas redes — e um brinde solto, não.
+    </p>
+  </div>
+</section>
+
+<!-- ░░░ BENEFITS ░░░ -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">O que você ganha</p>
+    <h2 class="sh">Quatro razões para <em>escolher o kit</em></h2>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <h3>Prático do começo ao fim</h3>
+        <p>Você escolhe os itens, a gente personaliza, monta e entrega pronto para distribuir. Sem montar caixa no escritório.</p>
+      </div>
+      <div class="benefit">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/>
+        </svg>
+        <h3>Impacto na hora de abrir</h3>
+        <p>A caixa com a sua marca cria expectativa antes mesmo do primeiro item. Um presente, não um brinde.</p>
+      </div>
+      <div class="benefit">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/>
+        </svg>
+        <h3>Marca em cada detalhe</h3>
+        <p>Tampa gravada a laser, itens personalizados, tudo conversando com a identidade da empresa. Sem concorrente que copie rápido.</p>
+      </div>
+      <div class="benefit">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+        </svg>
+        <h3>Feito para a sua ocasião</h3>
+        <p>Onboarding, reconhecimento, campanha, evento, cliente especial — cada kit pensado para o momento certo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ AUDIENCES ░░░ -->
+<section class="sec sec--alt">
+  <div class="wrap">
+    <p class="eyebrow">Para quem é</p>
+    <h2 class="sh">Sua dor tem um <em>kit pensado</em> para ela</h2>
+    <p class="lead">Clique no seu perfil e veja como um kit resolve o seu desafio — já com a mensagem certa no WhatsApp.</p>
+    <div class="audience-grid">
+
+      <a class="aud-card"
+         href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Sou+do+RH+e+quero+um+kit+de+onboarding+para+novos+colaboradores."
+         target="_blank" rel="noopener">
+        <span class="aud-tag">RH · Gente &amp; Gestão</span>
+        <h3>Kit Boas-Vindas</h3>
+        <p class="aud-pain">O primeiro dia é frio. O novo colaborador chega sem sentir que o time o esperava.</p>
+        <p class="aud-quote">"O primeiro dia fica na memória. Faça ele valer."</p>
+        <span class="aud-cta">Montar kit de onboarding →</span>
+      </a>
+
+      <a class="aud-card"
+         href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+kits+de+reconhecimento+para+minha+equipe+%28aniversariantes%2C+metas%2C+fim+de+ano%29."
+         target="_blank" rel="noopener">
+        <span class="aud-tag">RH · Endomarketing</span>
+        <h3>Kit Reconhecimento</h3>
+        <p class="aud-pain">Datas e metas passam em branco. A equipe não sente que o esforço foi visto.</p>
+        <p class="aud-quote">"Reconhecer é o que segura gente boa."</p>
+        <span class="aud-cta">Montar kit de reconhecimento →</span>
+      </a>
+
+      <a class="aud-card"
+         href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+kits+personalizados+para+campanha+ou+lan%C3%A7amento+de+produto."
+         target="_blank" rel="noopener">
+        <span class="aud-tag">Marketing</span>
+        <h3>Kit Campanha</h3>
+        <p class="aud-pain">Lançamento sem impacto. A campanha não é lembrada — e o investimento some.</p>
+        <p class="aud-quote">"Sua marca na mão certa, do jeito certo."</p>
+        <span class="aud-cta">Montar kit de campanha →</span>
+      </a>
+
+      <a class="aud-card"
+         href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+kits+para+clientes+e+parceiros+comerciais."
+         target="_blank" rel="noopener">
+        <span class="aud-tag">Comercial · Trade</span>
+        <h3>Kit Cliente Especial</h3>
+        <p class="aud-pain">O cliente esquece o fornecedor. Difícil abrir porta, difícil manter o relacionamento.</p>
+        <p class="aud-quote">"Quem lembra de você, compra de você."</p>
+        <span class="aud-cta">Montar kit comercial →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ HOW IT WORKS ░░░ -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Como funciona</p>
+    <h2 class="sh">Simples do começo <em>ao fim</em></h2>
+    <p class="lead">Sem complicação. Você nos fala o que precisa — a gente cuida do resto.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-n">01</div>
+        <h3>Escolha a ocasião</h3>
+        <p>Onboarding, reconhecimento, campanha, evento ou presente para cliente. Fala pra gente qual é o momento.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <h3>Escolha os itens</h3>
+        <p>Caderno, garrafa, caneta, squeeze, crachá e mais. A caixa modular se adapta ao que você escolher.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h3>Aprove a prévia</h3>
+        <p>Enviamos uma prévia digital com sua marca aplicada na caixa e nos itens. Só avança depois da sua aprovação.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <h3>Receba pronto</h3>
+        <p>Os kits chegam montados, embalados, prontos para distribuir. Você não precisa abrir uma caixa sequer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CATALOG ░░░ -->
+<section class="sec sec--alt" id="kits">
+  <div class="wrap">
+    <p class="eyebrow">Kits prontos</p>
+    <h2 class="sh">Inspire-se e <em>peça o seu orçamento</em></h2>
+    <p class="lead">Estes são os nossos kits mais pedidos. Podemos montar para a sua ocasião — sem preço fixo, sem prateleira. Cada pedido é único.</p>
+    <div class="catalog-grid">
+
+      <!-- Kit 1 -->
+      <div class="kit-card">
+        <svg class="kit-art" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#2C1A0A"/>
+          <rect x="60" y="50" width="280" height="200" rx="8" fill="#3D2410"/>
+          <!-- box body -->
+          <rect x="80" y="90" width="240" height="150" rx="4" fill="#C9966A"/>
+          <rect x="80" y="90" width="240" height="8"   rx="2" fill="#A87040"/>
+          <!-- items inside box -->
+          <rect x="100" y="115" width="70" height="100" rx="3" fill="#FAF0E0"/>
+          <rect x="100" y="115" width="70" height="10"  rx="2" fill="#B8722A"/>
+          <rect x="185" y="130" width="40" height="80"  rx="20" fill="#6B9BAB"/>
+          <rect x="240" y="120" width="20" height="90"  rx="3" fill="#E8D0A0"/>
+          <rect x="240" y="120" width="20" height="12"  rx="2" fill="#B8722A"/>
+          <!-- lid hint -->
+          <rect x="80" y="78" width="240" height="20" rx="4" fill="#B8722A" opacity="0.9"/>
+          <!-- label -->
+          <text x="200" y="268" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#C9966A" font-style="italic">Kit Boas-Vindas</text>
+        </svg>
+        <div class="kit-body">
+          <h3 class="kit-name">Kit Onboarding</h3>
+          <div class="kit-items">
+            <span class="kit-tag">Caderno</span>
+            <span class="kit-tag">Caneta</span>
+            <span class="kit-tag">Garrafa</span>
+            <span class="kit-tag">Crachá personalizado</span>
+            <span class="kit-tag">Caixa kraft gravada</span>
+          </div>
+          <p class="kit-min">A partir de 10 unidades</p>
+          <a class="btn-wa" style="margin-top:0.5rem"
+             href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+or%C3%A7amento+para+o+Kit+Onboarding+para+__%20colaboradores."
+             target="_blank" rel="noopener">Pedir orçamento</a>
+        </div>
+      </div>
+
+      <!-- Kit 2 -->
+      <div class="kit-card">
+        <svg class="kit-art" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#180C04"/>
+          <rect x="60" y="50" width="280" height="200" rx="8" fill="#2C1808"/>
+          <rect x="80" y="90" width="240" height="150" rx="4" fill="#D4A060"/>
+          <rect x="80" y="90" width="240" height="8"   rx="2" fill="#8B5A28"/>
+          <!-- star/award icon -->
+          <polygon points="200,110 207,130 228,130 212,142 218,163 200,151 182,163 188,142 172,130 193,130"
+                   fill="#FAF0E0" opacity="0.9"/>
+          <!-- items -->
+          <rect x="105" y="145" width="55" height="80" rx="3" fill="#FAF0E0"/>
+          <rect x="175" y="140" width="45" height="85" rx="3" fill="#E8E0D0"/>
+          <rect x="235" y="150" width="35" height="70" rx="3" fill="#C8D8E0"/>
+          <!-- lid -->
+          <rect x="80" y="78" width="240" height="20" rx="4" fill="#8B5A28" opacity="0.9"/>
+          <text x="200" y="268" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#D4A060" font-style="italic">Kit Reconhecimento</text>
+        </svg>
+        <div class="kit-body">
+          <h3 class="kit-name">Kit Reconhecimento</h3>
+          <div class="kit-items">
+            <span class="kit-tag">Squeeze personalizada</span>
+            <span class="kit-tag">Caneca</span>
+            <span class="kit-tag">Bloco de anotações</span>
+            <span class="kit-tag">Carta personalizada</span>
+            <span class="kit-tag">Caixa kraft gravada</span>
+          </div>
+          <p class="kit-min">A partir de 10 unidades</p>
+          <a class="btn-wa" style="margin-top:0.5rem"
+             href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+or%C3%A7amento+para+o+Kit+Reconhecimento+para+__%20colaboradores."
+             target="_blank" rel="noopener">Pedir orçamento</a>
+        </div>
+      </div>
+
+      <!-- Kit 3 -->
+      <div class="kit-card">
+        <svg class="kit-art" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#0D1A1C"/>
+          <rect x="60" y="50" width="280" height="200" rx="8" fill="#152025"/>
+          <rect x="80" y="90" width="240" height="150" rx="4" fill="#6B9BAB"/>
+          <rect x="80" y="90" width="240" height="8"   rx="2" fill="#3D6878"/>
+          <!-- megaphone icon -->
+          <path d="M160 125 L195 110 L195 160 L160 145 Z" fill="#FAF0E0" opacity="0.85"/>
+          <rect x="145" y="128" width="18" height="17" rx="2" fill="#FAF0E0" opacity="0.7"/>
+          <path d="M198 118 Q215 120 215 135 Q215 150 198 152" stroke="#FAF0E0" stroke-width="4" fill="none" opacity="0.7"/>
+          <!-- items -->
+          <rect x="230" y="110" width="60" height="80" rx="3" fill="#FAF0E0"/>
+          <rect x="230" y="110" width="60" height="10" rx="2" fill="#B8722A"/>
+          <!-- lid -->
+          <rect x="80" y="78" width="240" height="20" rx="4" fill="#3D6878" opacity="0.9"/>
+          <text x="200" y="268" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#9BC5D5" font-style="italic">Kit Campanha &amp; Lançamento</text>
+        </svg>
+        <div class="kit-body">
+          <h3 class="kit-name">Kit Campanha</h3>
+          <div class="kit-items">
+            <span class="kit-tag">Squeeze customizada</span>
+            <span class="kit-tag">Moleskine gravado</span>
+            <span class="kit-tag">Caneta</span>
+            <span class="kit-tag">Tag de acrílico</span>
+            <span class="kit-tag">Caixa kraft gravada</span>
+          </div>
+          <p class="kit-min">A partir de 15 unidades</p>
+          <a class="btn-wa" style="margin-top:0.5rem"
+             href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+or%C3%A7amento+para+o+Kit+Campanha+para+__%20unidades."
+             target="_blank" rel="noopener">Pedir orçamento</a>
+        </div>
+      </div>
+
+      <!-- Kit 4 -->
+      <div class="kit-card">
+        <svg class="kit-art" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#12100A"/>
+          <rect x="60" y="50" width="280" height="200" rx="8" fill="#1E1A10"/>
+          <rect x="80" y="90" width="240" height="150" rx="4" fill="#B8C8A0"/>
+          <rect x="80" y="90" width="240" height="8"   rx="2" fill="#6B8050"/>
+          <!-- handshake icon simplified -->
+          <path d="M140 140 Q160 125 180 135 L200 130 Q220 125 230 140" stroke="#FAF0E0" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M200 130 L200 155" stroke="#FAF0E0" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="140" cy="145" r="8" fill="#FAF0E0" opacity="0.8"/>
+          <circle cx="230" cy="145" r="8" fill="#FAF0E0" opacity="0.8"/>
+          <!-- item -->
+          <rect x="130" y="162" width="140" height="60" rx="4" fill="#FAF0E0" opacity="0.75"/>
+          <!-- lid -->
+          <rect x="80" y="78" width="240" height="20" rx="4" fill="#6B8050" opacity="0.9"/>
+          <text x="200" y="268" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#B8C8A0" font-style="italic">Kit Cliente Especial</text>
+        </svg>
+        <div class="kit-body">
+          <h3 class="kit-name">Kit Cliente Especial</h3>
+          <div class="kit-items">
+            <span class="kit-tag">Caneca premium</span>
+            <span class="kit-tag">Squeeze</span>
+            <span class="kit-tag">Bloco</span>
+            <span class="kit-tag">Porta-copos MDF</span>
+            <span class="kit-tag">Caixa kraft gravada</span>
+          </div>
+          <p class="kit-min">A partir de 10 unidades</p>
+          <a class="btn-wa" style="margin-top:0.5rem"
+             href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+or%C3%A7amento+para+o+Kit+Cliente+Especial+para+__%20unidades."
+             target="_blank" rel="noopener">Pedir orçamento</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ DIFFERENTIATOR ░░░ -->
+<section class="sec sec--dark">
+  <div class="wrap">
+    <div class="diff-layout">
+      <div>
+        <p class="eyebrow">O diferencial</p>
+        <h2 class="sh">A caixa que <em>ninguém copia fácil</em></h2>
+        <p class="lead">Um modelo base, cortado a laser em kraft, com espaço que aceita diferentes modelos de squeeze e um berço ajustável para moleskines. O cliente escolhe os itens; a caixa se adapta. Sem projeto novo a cada pedido.</p>
+        <div class="diff-features">
+          <div class="diff-feat">
+            <svg class="diff-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"/>
+            </svg>
+            <div>
+              <h4>Modular por design</h4>
+              <p>Um modelo se adapta a produtos diferentes, sem custo de projeto novo para cada pedido. Prazo curto, preço competitivo.</p>
+            </div>
+          </div>
+          <div class="diff-feat">
+            <svg class="diff-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
+            </svg>
+            <div>
+              <h4>Tampa gravada a laser</h4>
+              <p>A marca do cliente entra direto no kraft. Resultado sofisticado, sem adesivo, sem etiqueta que descola.</p>
+            </div>
+          </div>
+          <div class="diff-feat">
+            <svg class="diff-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <h4>Preço que a empresa média paga</h4>
+              <p>Cara de kit premium — sem o custo de um projeto gráfico e corte personalizado do zero para cada cliente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Box illustration -->
+      <svg class="diff-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="boxFace" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"   stop-color="#D4A060"/>
+            <stop offset="100%" stop-color="#A87040"/>
+          </linearGradient>
+          <linearGradient id="boxTop" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#E8C080"/>
+            <stop offset="100%" stop-color="#C89050"/>
+          </linearGradient>
+          <linearGradient id="boxSide" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#886030"/>
+            <stop offset="100%" stop-color="#604018"/>
+          </linearGradient>
+        </defs>
+        <!-- box base shadow -->
+        <ellipse cx="210" cy="390" rx="140" ry="18" fill="rgba(0,0,0,0.3)"/>
+        <!-- box side -->
+        <polygon points="70,200 70,340 210,390 210,250" fill="url(#boxSide)"/>
+        <!-- box front face -->
+        <polygon points="70,200 210,250 350,200 210,150" fill="url(#boxFace)"/>
+        <!-- horizontal grain lines on front -->
+        <line x1="90"  y1="195" x2="210" y2="242" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <line x1="90"  y1="205" x2="210" y2="252" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <line x1="90"  y1="215" x2="210" y2="262" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+        <!-- box right face -->
+        <polygon points="210,250 350,200 350,340 210,390" fill="#B87838"/>
+        <!-- lid separate (open angle) -->
+        <polygon points="70,200 210,150 350,200 210,250" fill="url(#boxTop)"/>
+        <!-- lid lifted / open - second lid above -->
+        <polygon points="70,160 210,110 350,160 210,210" fill="#E8C888" opacity="0.95"/>
+        <polygon points="70,160 70,167 210,217 210,210" fill="#C09848" opacity="0.9"/>
+        <polygon points="210,210 350,160 350,167 210,217" fill="#A87838" opacity="0.9"/>
+        <!-- laser engraving on lid (brand placeholder) -->
+        <text x="210" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="rgba(100,60,20,0.6)" font-style="italic" letter-spacing="1">SUA MARCA AQUI</text>
+        <line x1="155" y1="152" x2="265" y2="152" stroke="rgba(100,60,20,0.3)" stroke-width="0.5"/>
+        <!-- items sticking out of box -->
+        <!-- notebook -->
+        <rect x="130" y="145" width="52" height="70" rx="2" fill="#FAF4E8" transform="rotate(-8,156,180)"/>
+        <rect x="130" y="145" width="52" height="8"  rx="1" fill="#B8722A" transform="rotate(-8,156,180)"/>
+        <!-- bottle -->
+        <rect x="195" y="130" width="30" height="78" rx="12" fill="#6B9BAB" transform="rotate(5,210,169)"/>
+        <rect x="199" y="128" width="22" height="12" rx="4" fill="#4A7888" transform="rotate(5,210,169)"/>
+        <!-- notebook 2 -->
+        <rect x="248" y="140" width="44" height="62" rx="2" fill="#E8E4DC" transform="rotate(10,270,171)"/>
+        <rect x="248" y="140" width="44" height="7"  rx="1" fill="#6B8050" transform="rotate(10,270,171)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ SUSTAINABILITY ░░░ -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Responsabilidade</p>
+    <h2 class="sh">Bonito <em>e responsável</em></h2>
+    <div class="sustain-layout">
+      <div class="sustain-visual">
+        <div class="sustain-stat">
+          <div class="sustain-num">100%</div>
+          <div class="sustain-lbl">papel kraft natural</div>
+        </div>
+        <div class="sustain-stat">
+          <div class="sustain-num">Zero</div>
+          <div class="sustain-lbl">plástico na embalagem</div>
+        </div>
+      </div>
+      <div class="sustain-text">
+        <p>Nossas caixas são de papel kraft: fibra natural, reciclável e biodegradável. Sem plástico na embalagem.</p>
+        <p>O corte a laser preciso evita sobra de material, e a caixa é bonita o bastante para ser guardada e reutilizada. Um presente que respeita quem recebe — e o planeta.</p>
+        <p>Para empresas com metas ESG, o kit RP Promo é uma escolha de brinde que reforça o compromisso ambiental da marca, não contradiz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ MDF & ACRYLIC ░░░ -->
+<section class="sec sec--alt">
+  <div class="wrap">
+    <p class="eyebrow">Além das caixas</p>
+    <h2 class="sh">MDF e acrílico <em>cortados a laser</em></h2>
+    <p class="lead">Peças sob medida que complementam o kit — ou que ficam sozinhas como presente de impacto.</p>
+    <p style="margin-top:0.75rem; font-size:0.9rem; font-style:italic; color:var(--fg-muted);">
+      "Além da caixa: peças em MDF e acrílico cortadas a laser, sob medida para a sua marca."
+    </p>
+    <div class="mdf-grid">
+      <div class="mdf-item">
+        <h4>Dentro do kit</h4>
+        <p>Tag de acrílico com o nome do colaborador, chaveiro, porta-copo com capa de MDF gravada.</p>
+      </div>
+      <div class="mdf-item">
+        <h4>Para o escritório</h4>
+        <p>Placa de boas-vindas, display de mesa, suporte de celular e organizador com a marca.</p>
+      </div>
+      <div class="mdf-item">
+        <h4>Para reconhecer</h4>
+        <p>Troféu e placa de homenagem em acrílico ou MDF para metas, tempo de casa e premiações.</p>
+      </div>
+      <div class="mdf-item">
+        <h4>Para o ponto de venda</h4>
+        <p>Displays, expositores e bases para produto — corte preciso, acabamento impecável.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CLIENTS ░░░ -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Quem já recebeu</p>
+    <h2 class="sh">Empresas que <em>confiam na RP Promo</em></h2>
+    <div class="clients-logos">
+      <span class="client-pill">Feevale</span>
+      <span class="client-pill">InterCement</span>
+      <span class="client-pill">Suvinil</span>
+      <span class="client-pill">Coral</span>
+    </div>
+    <blockquote class="testimonial">
+      "A caixa transforma 3 itens comuns em um presente. O cliente compara com outras experiências, não com o preço unitário da caneca."
+    </blockquote>
+    <p class="testimonial-attr">— Equipe RP Promo</p>
+  </div>
+</section>
+
+<!-- ░░░ FAQ ░░░ -->
+<section class="sec sec--alt">
+  <div class="wrap">
+    <p class="eyebrow">Dúvidas</p>
+    <h2 class="sh">Perguntas <em>frequentes</em></h2>
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>
+          Qual é o pedido mínimo?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="faq-body">Em geral, trabalhamos a partir de 10 unidades por kit. Para pedidos com MDF e acrílico avulsos, o mínimo pode variar. Fale com a gente no WhatsApp e ajustamos conforme a sua necessidade.</p>
+      </details>
+
+      <details class="faq">
+        <summary>
+          Qual é o prazo de entrega?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="faq-body">O prazo depende dos itens escolhidos e da quantidade. Por ser modular, nosso processo é mais rápido do que um projeto totalmente personalizado do zero. Assim que você nos passa os detalhes, já informamos a data estimada.</p>
+      </details>
+
+      <details class="faq">
+        <summary>
+          O frete está incluso?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="faq-body">O frete é calculado conforme destino e quantidade. Para grandes pedidos com entrega centralizada, frequentemente conseguimos um custo muito competitivo. Informe o CEP no orçamento.</p>
+      </details>
+
+      <details class="faq">
+        <summary>
+          Como é o processo de aprovação visual?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="faq-body">Enviamos uma prévia digital com a sua marca aplicada à caixa e aos itens antes de qualquer produção. Só avançamos depois da sua aprovação. Ajustes simples de arte não têm custo adicional.</p>
+      </details>
+
+      <details class="faq">
+        <summary>
+          Como funciona o pagamento?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="faq-body">Aceitamos boleto, Pix e transferência. Geralmente trabalhamos com 50% de entrada e o restante na entrega. Para clientes recorrentes, podemos negociar condições especiais.</p>
+      </details>
+
+      <details class="faq">
+        <summary>
+          Posso pedir kits com itens diferentes em um mesmo pedido?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="faq-body">Sim! Como a caixa é modular, podemos montar variações dentro do mesmo pedido — por exemplo, kits de onboarding para diferentes cargos, com itens ligeiramente distintos. Fale com a gente para ajustar o orçamento.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FINAL CTA ░░░ -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2 class="final-cta-h">
+      Vamos montar o kit<br>
+      <em>da sua empresa?</em>
+    </h2>
+    <p class="lead">
+      A conversa começa no WhatsApp. Você conta a ocasião, a quantidade e o que imagina —
+      a gente monta o orçamento e a prévia do kit.
+    </p>
+    <div class="final-cta-actions">
+      <a class="btn-wa btn-wa--lg"
+         href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+montar+o+kit+da+minha+empresa."
+         target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Montar meu kit no WhatsApp
+      </a>
+      <a class="btn-wa btn-wa--lg btn-wa--ghost"
+         href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Quero+receber+o+cat%C3%A1logo+de+kits+em+PDF."
+         target="_blank" rel="noopener">
+        Receber catálogo em PDF
+      </a>
+    </div>
+    <div class="final-contact">
+      <strong style="color:rgba(250,248,244,0.5)">Caixinhas RP Promo</strong><br>
+      WhatsApp: <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">(00) 00000-0000</a>
+      &nbsp;·&nbsp;
+      Instagram: <a href="https://instagram.com/rppromo" target="_blank" rel="noopener">@rppromo</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:contato@rppromo.com.br">contato@rppromo.com.br</a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FOOTER ░░░ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Caixinhas <span>RP Promo</span></div>
+    <ul class="footer-links">
+      <li><a href="#kits">Kits</a></li>
+      <li><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="https://instagram.com/rppromo" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:contato@rppromo.com.br">E-mail</a></li>
+    </ul>
+    <div class="footer-cnpj">
+      RP Promo — CNPJ a confirmar · Todos os direitos reservados
+    </div>
+  </div>
+</footer>
