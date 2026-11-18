@@ -15,6 +15,8 @@
     }
   ],
   "redirects": [
+    { "source": "/whatsapp", "has": [{ "type": "query", "key": "text", "value": "(?<text>.*)" }], "destination": "https://wa.me/5500000000000?text=:text", "permanent": false },
+    { "source": "/whatsapp", "destination": "https://wa.me/5500000000000", "permanent": false },
     { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.rppromo-caixinhas.com.br" }], "destination": "https://rppromo-caixinhas.com.br/:path", "permanent": true }
   ]
 }

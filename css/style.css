@@ -589,6 +589,28 @@ h2.sh em { font-style: italic; font-weight: 400; color: var(--accent-text); }
 }
 
 /* ─── CUSTOM KIT ──────────────────────────────── */
+.custom-kit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.custom-kit-item {
+  padding: 1.5rem;
+  border-top: 2px solid var(--accent);
+}
+.custom-kit-item h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--fg);
+}
+.custom-kit-item p {
+  font-size: 0.87rem;
+  color: var(--fg-muted);
+  margin: 0;
+  line-height: 1.6;
+}
 .custom-kit-cta { margin-top: 2rem; }
 
 /* ─── CLIENTS ─────────────────────────────────── */
