@@ -23,7 +23,7 @@
     '.sec .eyebrow', '.sec h2.sh', '.sec .lead',
     '.benefit', '.aud-card', '.step', '.kit-card',
     '.custom-kit-item', '.custom-kit-cta', '.diff-feat',
-    '.sustain-stat', '.mdf-item', '.clients-logos', '.testimonial',
+    '.sustain-stat', '.mdf-item', '.client-stats', '.testimonial',
     'details.faq'
   ].join(',');
 

@@ -662,21 +662,31 @@ h2.sh em { font-style: italic; font-weight: 400; color: var(--accent-text); }
 .custom-kit-cta { margin-top: 2rem; }
 
 /* ─── CLIENTS ─────────────────────────────────── */
-.clients-logos {
+.client-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1rem 4rem;
   margin: 2.5rem 0 3rem;
 }
-.client-pill {
-  font-size: 0.82rem;
+.client-stat {
+  border-top: 2px solid var(--accent);
+  padding-top: 1rem;
+  min-width: 160px;
+}
+.client-stat-num {
+  font-family: var(--ff-disp);
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  font-variant-numeric: lining-nums;
+  line-height: 1;
+  color: var(--accent-text);
+}
+.client-stat-lbl {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--fg-muted);
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  padding: 7px 18px;
-  border-radius: 50px;
 }
 .testimonial {
   font-family: var(--ff-disp);
