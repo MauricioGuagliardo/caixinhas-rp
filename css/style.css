@@ -515,6 +515,10 @@ h2.sh em { font-style: italic; font-weight: 400; color: var(--accent-text); }
   aspect-ratio: 4/3;
   display: block;
 }
+img.kit-art {
+  object-fit: cover;
+  object-position: center;
+}
 .kit-body {
   padding: 1.5rem;
   flex: 1;
