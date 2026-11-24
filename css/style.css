@@ -2,7 +2,7 @@
 :root{--verde:#263d2b;--sage:#dde5d2;--creme:#f7f0e6;--salmao:#eba995;--areia:#e8dfd0;--terracota:#c98270;--texto:#24352a}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:var(--creme);color:var(--texto)}
-section{padding:64px max(5vw,24px)}
+section{padding:64px max(5vw,24px,calc((100vw - 1200px)/2))}
 h1,h2,p{margin-top:0}
 h1{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.02;color:var(--verde);max-width:650px}
 h2{font-size:clamp(1.8rem,3vw,2.7rem);color:var(--verde)}
@@ -19,7 +19,7 @@ p{line-height:1.55}
 .benefit:last-child{border:0}
 .bubble{background:var(--salmao);border-radius:50%;width:58px;height:58px;margin:0 auto 12px;display:grid;place-items:center;font-size:28px}
 
-.audience{background:var(--verde);color:white;border-radius:28px;text-align:center}
+.audience{background:var(--verde);color:white;border-radius:28px;text-align:center;margin-inline:max(0px,calc((100vw - 1320px)/2))}
 .audience h2{color:white}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .card{padding:24px 12px;border-radius:20px;color:var(--verde)}
